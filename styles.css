@@ -1,0 +1,20 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  cursor: pointer;
+  background-color: black;
+}
+
+#div1 {
+  display: none;
+  color: #fff;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+#div1InnerDiv {
+  /*width: 1200px;*/
+  margin: 0px;
+  padding: 0px;
+}
