@@ -149,7 +149,7 @@ setInterval((innerDiv,mainDiv,preHr,preMin,preSec) => {
   mainDiv.style.width = window.innerWidth + 'px'; 
   mainDiv.style.height = window.innerHeight + 'px';
   if(window.innerHeight * 3.1 < window.innerWidth){
-    innerDiv.style.fontSize = window.innerHeight * 0.887 + 'px';
+    innerDiv.style.fontSize = window.innerHeight * 0.888 + 'px';
   }
   //alert(window.innerHeight + '.' + window.innerWidth + '.' + window.innerHeight * 3)
   if(new Date().getHours() < 10){
