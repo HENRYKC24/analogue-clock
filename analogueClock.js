@@ -24,8 +24,8 @@ const writeText  = (ctx,ch,cv,radius,incr,) => {
   ctx.fillText("5",ch + incr * 1.52,cv  + (incr * 2.59));
   ctx.font = radius * 0.08 + 'px Monotype Corsiva';
   ctx.fillStyle = "#880000";
-  ctx.fillText('KCSoftSolutions.com',ch, radius * 0.6);
-  ctx.fillText('KCSoftSolutions.com',ch, radius * 0.6);
+  ctx.fillText('HENRY-KC CODES',ch, radius * 0.6);
+  ctx.fillText('HENRY-KC CODES',ch, radius * 0.6);
   ctx.fillText('#passionComputerProgramming',ch, radius * 1.5);
 };
 
@@ -156,17 +156,17 @@ setInterval((innerDiv,mainDiv,preHr,preMin,preSec) => {
       preHr = 0;
   }else{
       preHr = '';
-  };
+  }
   if(new Date().getSeconds() < 10){
       preSec = 0;
   }else{
       preSec = '';
-  };
+  }
   if(new Date().getMinutes() < 10){
       preMin = 0;
   }else{
       preMin = '';
-  };
+  }
   innerDiv.innerHTML =  preHr + '' + new Date().getHours() + ':' + preMin +
    new Date().getMinutes() + ':' + preSec + new Date().getSeconds();
   // if(window.innerHeight < 500){
