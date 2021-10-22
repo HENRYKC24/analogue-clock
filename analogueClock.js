@@ -4,6 +4,7 @@ var min = new Date().getMinutes() * 6 * Math.PI / 180 + (sec/60);
 var hr = new Date().getHours() * 30 * Math.PI / 180 + (min/12);
 var canvas,ctx,ch,vc,radius,a,incr,grad,preHr, preSec, preMin,mainDiv,innerDiv,tick,audio,source,textNode,body;
 
+
 const writeText  = (ctx,ch,cv,radius,incr,) => {
   ctx.font = radius * 0.14 + 'px arial';
   ctx.fillStyle = "#fff";
@@ -68,7 +69,8 @@ setInterval(() => {
   cv = window.innerHeight / 2;
   radius = cv;
   if(cv > ch){
-      change = cv - ch;
+    canvas.height = window.innerHeight * 0.6;
+      const change = cv - ch;
       cv -= change;
       radius = cv;
       //ch = cv;
@@ -105,7 +107,6 @@ setInterval(() => {
   ctx.lineWidth = `${radius/10}`;
   ctx.stroke();
   ctx.setTransform(1,0,0,1,0,0);
-  //var sec = new Date().getSeconds() * 0.10471975511965977;
   ctx.beginPath();
   ctx.translate(ch,cv);
   ctx.rotate(new Date().getMinutes() * 6 * Math.PI / 180 +
@@ -138,20 +139,18 @@ setInterval(() => {
   ctx.fill();
   ctx.setTransform(1,0,0,1,0,0);
 },1000);
-//ended setInterval here
 
 setInterval((innerDiv,mainDiv,preHr,preMin,preSec) => {
   innerDiv = document.querySelector('#div1InnerDiv');
   mainDiv = document.querySelector('#div1');
   innerDiv.style.width = window.innerWidth + 'px'; 
   innerDiv.style.height = window.innerHeight + 'px';
-  innerDiv.style.fontSize = window.innerWidth * 0.28 + 'px';
+  // innerDiv.style.fontSize = window.innerWidth * 0.28 + 'px';
   mainDiv.style.width = window.innerWidth + 'px'; 
   mainDiv.style.height = window.innerHeight + 'px';
   if(window.innerHeight * 3.1 < window.innerWidth){
     innerDiv.style.fontSize = window.innerHeight * 0.888 + 'px';
   }
-  //alert(window.innerHeight + '.' + window.innerWidth + '.' + window.innerHeight * 3)
   if(new Date().getHours() < 10){
       preHr = 0;
   }else{
@@ -169,7 +168,4 @@ setInterval((innerDiv,mainDiv,preHr,preMin,preSec) => {
   }
   innerDiv.innerHTML =  preHr + '' + new Date().getHours() + ':' + preMin +
    new Date().getMinutes() + ':' + preSec + new Date().getSeconds();
-  // if(window.innerHeight < 500){
-  //    alert(mainDiv.style.height + window.innerHeight);
-  // }
 },1000);
